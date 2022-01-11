@@ -9,7 +9,7 @@ using namespace cv;
 using namespace std;
 int main( int argc, char** argv )
 {
-    String imageName("images/FLIR_00002.jpeg" ); // by default
+    String imageName("images/FLIR_00002.jpg" ); // by default
     Mat image;
     image = imread( samples::findFile( imageName ), IMREAD_COLOR ); // Read the file
     if( image.empty() )                      // Check for invalid input
