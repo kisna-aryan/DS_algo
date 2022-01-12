@@ -11,7 +11,7 @@ int main( int argc, char** argv )
 {
     String imageName("images/FLIR_00002.jpg" ); // by default
     Mat image;
-    image = imread( samples::findFile( imageName ), IMREAD_COLOR ); // Read the file
+    image = imread( samples::findFile( imageName ), IMREAD_UNCHANGED ); // Read the file
     if( image.empty() )                      // Check for invalid input
     {
         cout <<  "Could not open or find the image" << std::endl ;

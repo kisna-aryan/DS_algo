@@ -17,14 +17,14 @@ int main( int argc, char** argv )
         cout <<  "Could not open or find the image" << std::endl ;
         return -1;
     }
-    int newImageRows = image.rows/2;
-    int newImageCols = image.cols/2;
+    int newImageRows = image.rows*2;
+    int newImageCols = image.cols*2;
     Mat newImage(newImageRows, newImageCols, CV_8UC1);
     for(int i = 0; i < newImageRows; i++)
     {
         for(int j = 0; j < newImageCols; j++)
         {
-            newImage.at<uchar>(i,j) = image.at<uchar>(i*2,j*2,0);
+            newImage.at<uchar>(i,j) = image.at<uchar>(i/2,j/2,0);
         }
     }
     namedWindow( "Original Images", WINDOW_AUTOSIZE ); // Create a window for display.
