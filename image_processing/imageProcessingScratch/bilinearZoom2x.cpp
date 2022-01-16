@@ -9,7 +9,7 @@ using namespace cv;
 using namespace std;
 int main( int argc, char** argv )
 {
-    String imageName("images/abstarctArt.jpg" ); // by default
+    String imageName("../images/image.jpg" ); // by default
     Mat image;
     image = imread(samples::findFile( imageName ), IMREAD_UNCHANGED); // Read the file
     if( image.empty() )                      // Check for invalid input
@@ -35,15 +35,18 @@ int main( int argc, char** argv )
     {
         for(int j = 0; j < newImageCols; j++)
         {
-            Vec3b intensity = image.at<Vec3b>(Point(i/2,j/2));
-            Vec3b intensity1 = image.at<Vec3b>(Point((i+1)/2,(j+1)/2));
-            Vec3b intensity2 = (intensity + intensity1)/2;
-            newImage.at<Vec3b>(Point(i,j)) = intensity2;
-            // newImage.at<Vec3b>(i,j) = (image.at<Vec3b>(i/2,j/2) + image.at<Vec3b>((i+1)/2,(j+1)/2))/2;	
-	
+            // Vec3b intensity = image.at<Vec3b>(i/2,j/2);
+            // Vec3b intensity1 = image.at<Vec3b>((i+1)/2,(j+1)/2);
+            // unsigned char blue = (image.at<Vec3b>(i/2,j/2)[0] + image.at<Vec3b>((i+1)/2,(j+1)/2)[0])/2;
+            // unsigned char green = (image.at<Vec3b>(i/2,j/2)[1] + image.at<Vec3b>((i+1)/2,(j+1)/2)[1])/2;
+            // unsigned char red = (image.at<Vec3b>(i/2,j/2)[2] + image.at<Vec3b>((i+1)/2,(j+1)/2)[2])/2;
+
+            // newImage.at<Vec3b>(i,j) = {blue,green,red};
             // newImage.at<Vec3b>(i,j) = (image.at<Vec3b>(i/2,j/2) + image.at<Vec3b>((i+1)/2,(j+1)/2))/2;
-            // newImage.at<Vec3b>(i,j) = (image.at<Vec3b>(i/2,j/2) + image.at<Vec3b>((i+1)/2,(j+1)/2))/2;	
-            // newImage.at<Vec3b>(i,j) = (image.at<Vec3b>(i/2,j/2) + image.at<Vec3b>((i+1)/2,(j+1)/2))/2;	
+	
+            newImage.at<Vec3b>(i,j)[0] = (image.at<Vec3b>(i/2,j/2)[0] + image.at<Vec3b>((i+1)/2,(j+1)/2)[0])/2;
+            newImage.at<Vec3b>(i,j)[1] = (image.at<Vec3b>(i/2,j/2)[1] + image.at<Vec3b>((i+1)/2,(j+1)/2)[1])/2;	
+            newImage.at<Vec3b>(i,j)[2] = (image.at<Vec3b>(i/2,j/2)[2] + image.at<Vec3b>((i+1)/2,(j+1)/2)[2])/2;	
         }
     }
     namedWindow( "Original Images", WINDOW_AUTOSIZE ); // Create a window for display.

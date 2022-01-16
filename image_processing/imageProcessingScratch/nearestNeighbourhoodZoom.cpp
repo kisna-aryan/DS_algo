@@ -9,7 +9,7 @@ using namespace cv;
 using namespace std;
 int main( int argc, char** argv )
 {
-    String imageName("images/FLIR_video_00001.jpeg" ); // by default
+    String imageName("../images/FLIR_video_00001.jpeg" ); // by default
     Mat image;
     image = imread(samples::findFile( imageName ), IMREAD_UNCHANGED); // Read the file
     if( image.empty() )                      // Check for invalid input
@@ -24,7 +24,7 @@ int main( int argc, char** argv )
     {
         for(int j = 0; j < newImageCols; j++)
         {
-            newImage.at<uchar>(i,j) = image.at<uchar>(i/2,j/2,0);
+            newImage.at<uchar>(i,j) = image.at<Vec3b>(i/2,j/2)[0];
         }
     }
     namedWindow( "Original Images", WINDOW_AUTOSIZE ); // Create a window for display.

@@ -4,7 +4,7 @@ using namespace std;
 using namespace cv;
 int main() {
    Mat image;//taking an image matrix//
-   image = imread("images/flower.png");//loading an image//
+   image = imread("../images/flower.png");//loading an image//
    if(image.empty()) {//if image is empty//
       cout<<"Image is empty"<<endl;
       return -1;
@@ -19,11 +19,11 @@ int main() {
 //    cout << "Value of green channel:" << x << endl;//showing the pixel values//
 //    cout << "Value of red channel:" << x << endl;//showing the pixel values//
     Vec3b intensity = image.at<Vec3b>(10, 29);//getting the pixel values//
-    Vec3b intensity1 = image.at<Vec3b>(10, 51);//getting the pixel values//
+    Vec3b intensity1 = image.at<Vec3b>(10, 30);//getting the pixel values//
     Vec3b intensity2 = image.at<Vec3b>(10, 73);//getting the pixel values//
     cout << "Value of intensity : " << intensity << endl;//showing the pixel values//
     cout << "Value of intensity1 : " << intensity1 << endl;//showing the pixel values//
-    cout << "Value of blue channel:" << intensity + intensity1 << endl;//showing the pixel values//
+    cout << "Value of blue channel:" << (intensity + intensity1)/2 << endl;//showing the pixel values//
     cout << image.at<Vec3b>(10, 29) << endl;//getting the pixel values//
    system("pause");//pause the system to visualize the result//
    return 0;
