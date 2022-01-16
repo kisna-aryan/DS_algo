@@ -1,2 +1,8 @@
-kthreverse
-rainTrap
+
+DSA/rainWater.exe
+image_processing/readImageOpencv.exe
+image_processing/nearestNeighbourhoodZoom.exe
+image_processing/bilinearZoom2x.exe
+image_processing/readPixelValuesOpenCV.exe
+DSA/setMatrixZero.exe
+
