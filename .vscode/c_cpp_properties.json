@@ -4,10 +4,10 @@
             "name": "Linux",
             "includePath": [
                 "${workspaceFolder}/**",
-                "/usr/local/include/opencv4"
+                "C:/msys64/mingw64/include/opencv4"
             ],
             "defines": [],
-            "compilerPath": "/usr/bin/gcc",
+            "compilerPath": "C:/msys64/mingw64/bin/gcc",
             "cStandard": "gnu17",
             "cppStandard": "gnu++14",
             "intelliSenseMode": "linux-gcc-x64"
