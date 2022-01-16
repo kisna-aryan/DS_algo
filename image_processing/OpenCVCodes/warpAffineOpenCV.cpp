@@ -28,7 +28,7 @@ int main(int, char**)
     // wait indefinitely, press any key on keyboard to exit
 	  waitKey(0);
 	  // save the rotated image to disk
-	  imwrite("rotated_im.jpg", rotated_image);
+	//   imwrite("rotated_im.jpg", rotated_image);
 
 	  return 0;
 }

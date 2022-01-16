@@ -14,3 +14,4 @@ image_processing/OpenCVCodes/imageResizeOpenCV
 image_processing/OpenCVCodes/readImageOpencv
 image_processing/OpenCVCodes/cropImageOpenCV
 image_processing/OpenCVCodes/warpAffineOpenCV
+image_processing/imageProcessingScratch/bilinearZoom2x
