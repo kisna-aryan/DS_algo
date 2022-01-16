@@ -6,3 +6,4 @@ image_processing/bilinearZoom2x.exe
 image_processing/readPixelValuesOpenCV.exe
 DSA/setMatrixZero.exe
 
+image_processing/readPixelValuesOpenCV
