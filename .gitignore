@@ -7,3 +7,10 @@ image_processing/readPixelValuesOpenCV.exe
 DSA/setMatrixZero.exe
 
 image_processing/readPixelValuesOpenCV
+image_processing/imageProcessingScratch/nearestNeighbourhoodZoom
+image_processing/imageProcessingScratch/readPixelValuesOpenCV
+image_processing/OpenCVCodes/annoImageOPenCV
+image_processing/OpenCVCodes/imageResizeOpenCV
+image_processing/OpenCVCodes/readImageOpencv
+image_processing/OpenCVCodes/cropImageOpenCV
+image_processing/OpenCVCodes/warpAffineOpenCV
