@@ -27,6 +27,7 @@ int main( int argc, char** argv )
             newImage.at<uchar>(i,j) = image.at<Vec3b>(i/2,j/2)[0];
         }
     }
+    
     namedWindow( "Original Images", WINDOW_AUTOSIZE ); // Create a window for display.
     imshow( "Original Images", image );    
 
