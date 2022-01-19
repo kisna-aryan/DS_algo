@@ -21,3 +21,5 @@ image_processing/imageProcessingScratch/cropImage.exe
 image_processing/imageProcessingScratch/nearestNeighbourhoodZoom.exe
 image_processing/imageProcessingScratch/bilinearZoom2x.exe
 image_processing/imageProcessingScratch/avg_filter.exe
+image_processing/imageProcessingScratch/avg_filter_refactor.exe
+image_processing/imageProcessingScratch/sobel_H_filter.exe

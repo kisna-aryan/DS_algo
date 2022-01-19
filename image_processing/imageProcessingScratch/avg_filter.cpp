@@ -21,9 +21,9 @@ int main()
     int newImageCols  = image.size().width; 
     Mat newImage(newImageRows,newImageCols, image.type());
 
-    for(int i = 1; i < newImageCols-1; i++)
+    for(int i = 1; i < newImageRows-1; i++)
     {
-        for(int j = 1; j < newImageRows-1; j++)
+        for(int j = 1; j < newImageCols-1; j++)
         {
             newImage.at<Vec3b>(i,j)[0] = (image.at<Vec3b>(i + 1, j + 1)[0] + image.at<Vec3b>(i+ 1 , j)[0] + image.at<Vec3b>(i + 1 , j - 1)[0] + image.at<Vec3b>(i - 1, j)[0]+  image.at<Vec3b>(i -1 , j + 1)[0] + image.at<Vec3b>(i - 1, j -1)[0] + image.at<Vec3b>(i, j)[0] + image.at<Vec3b>(i, j + 1)[0] +  image.at<Vec3b>(i, j -1)[0])/9;
             newImage.at<Vec3b>(i,j)[1] = (image.at<Vec3b>(i + 1, j + 1)[1] + image.at<Vec3b>(i+ 1 , j)[1] + image.at<Vec3b>(i + 1 , j - 1)[1] + image.at<Vec3b>(i - 1, j)[1]+  image.at<Vec3b>(i -1 , j + 1)[1] + image.at<Vec3b>(i - 1, j -1)[1] + image.at<Vec3b>(i, j)[1] + image.at<Vec3b>(i, j + 1)[1] +  image.at<Vec3b>(i, j -1)[1])/9;
