@@ -9,7 +9,7 @@ using namespace std;
 
 int main()
 {   
-    String imageName("images/image.jpg" ); // by default
+    String imageName("../images/image.jpg" ); // by default
     Mat image;
     image = imread( samples::findFile( imageName ), IMREAD_UNCHANGED ); // Read the file
     if( image.empty() )                      // Check for invalid input
@@ -21,11 +21,13 @@ int main()
     int newImageCols  = image.size().width; 
     Mat newImage(newImageRows,newImageCols, image.type());
 
-    for(int i = 1; i < newImageCols; i++)
+    for(int i = 1; i < newImageCols-1; i++)
     {
-        for(int j = 1; j < newImageRows; j++)
+        for(int j = 1; j < newImageRows-1; j++)
         {
-            newImage.at<Vec3b>(i,j) = (image.at<Vec3b>(i + 1, j + 1) + image.at<Vec3b>(i+ 1 , j) + image.at<Vec3b>(i + 1 , j - 1) + image.at<Vec3b>(i - 1, j)+  image.at<Vec3b>(i -1 , j + 1) + image.at<Vec3b>(i - 1, j -1) + image.at<Vec3b>(i, j) + image.at<Vec3b>(i, j + 1) +  image.at<Vec3b>(i, j -1))/9;
+            newImage.at<Vec3b>(i,j)[0] = (image.at<Vec3b>(i + 1, j + 1)[0] + image.at<Vec3b>(i+ 1 , j)[0] + image.at<Vec3b>(i + 1 , j - 1)[0] + image.at<Vec3b>(i - 1, j)[0]+  image.at<Vec3b>(i -1 , j + 1)[0] + image.at<Vec3b>(i - 1, j -1)[0] + image.at<Vec3b>(i, j)[0] + image.at<Vec3b>(i, j + 1)[0] +  image.at<Vec3b>(i, j -1)[0])/9;
+            newImage.at<Vec3b>(i,j)[1] = (image.at<Vec3b>(i + 1, j + 1)[1] + image.at<Vec3b>(i+ 1 , j)[1] + image.at<Vec3b>(i + 1 , j - 1)[1] + image.at<Vec3b>(i - 1, j)[1]+  image.at<Vec3b>(i -1 , j + 1)[1] + image.at<Vec3b>(i - 1, j -1)[1] + image.at<Vec3b>(i, j)[1] + image.at<Vec3b>(i, j + 1)[1] +  image.at<Vec3b>(i, j -1)[1])/9;
+            newImage.at<Vec3b>(i,j)[2] = (image.at<Vec3b>(i + 1, j + 1)[2] + image.at<Vec3b>(i+ 1 , j)[2] + image.at<Vec3b>(i + 1 , j - 1)[2] + image.at<Vec3b>(i - 1, j)[2]+  image.at<Vec3b>(i -1 , j + 1)[2] + image.at<Vec3b>(i - 1, j -1)[2] + image.at<Vec3b>(i, j)[2] + image.at<Vec3b>(i, j + 1)[2] +  image.at<Vec3b>(i, j -1)[2])/9;
 
         }
     }
@@ -33,8 +35,8 @@ int main()
         namedWindow( "Original Images", WINDOW_AUTOSIZE ); // Create a window for display.
     imshow( "Original Images", image );    
 
-    namedWindow( "Cropped Image", WINDOW_AUTOSIZE ); // Create a window for display.
-    imshow( "Cropped Image", newImage );                // Show our image inside it.
+    namedWindow( "Blurred Image", WINDOW_AUTOSIZE ); // Create a window for display.
+    imshow( "Blurred Image", newImage );                // Show our image inside it.
     waitKey(0); // Wait for a keystroke in the window
     return 0;
 }
