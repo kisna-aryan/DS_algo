@@ -24,7 +24,7 @@ int main( int argc, char** argv )
     int crop_x1 = 0;
     int crop_y1 = 0;
     int crop_x2 = 200;  
-    int crop_y2 = 220;
+    int crop_y2 = 280;
 
     int newImageRows = crop_y2 - crop_y1;
     int newImageCols = crop_x2 - crop_x1;
