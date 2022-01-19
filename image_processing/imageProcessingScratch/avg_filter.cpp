@@ -17,14 +17,15 @@ int main()
         cout <<  "Could not open or find the image" << std::endl ;
         return -1;
     }
-    [int newImageRows, int newImageCols, int che] = image.size(); 
-    Mat newImage(newImageRows,newImageCols, che);
+    int newImageRows  = image.size().height; 
+    int newImageCols  = image.size().width; 
+    Mat newImage(newImageRows,newImageCols, image.type());
 
     for(int i = 1; i < newImageCols; i++)
     {
         for(int j = 1; j < newImageRows; j++)
         {
-            newImage.at<Vec3b>(i,j) = (image.at<Vec3b>(i + 1, j + 1) +  image.at<Vec3b>(i+ 1 , j)+  image.at<Vec3b>(i + 1 , j - 1) +  image.at<Vec3b>(i - 1, j)+  image.at<Vec3b>(i -1 , j + 1)+  image.at<Vec3b>(i - 1, j -1)+  image.at<Vec3b>(i, j) + image.at<Vec3b>(i, j + 1) +  image.at<Vec3b>(i, j -1))/9;
+            newImage.at<Vec3b>(i,j) = (image.at<Vec3b>(i + 1, j + 1) + image.at<Vec3b>(i+ 1 , j) + image.at<Vec3b>(i + 1 , j - 1) + image.at<Vec3b>(i - 1, j)+  image.at<Vec3b>(i -1 , j + 1) + image.at<Vec3b>(i - 1, j -1) + image.at<Vec3b>(i, j) + image.at<Vec3b>(i, j + 1) +  image.at<Vec3b>(i, j -1))/9;
 
         }
     }
