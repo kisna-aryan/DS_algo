@@ -16,3 +16,9 @@ image_processing/OpenCVCodes/cropImageOpenCV
 image_processing/OpenCVCodes/warpAffineOpenCV
 image_processing/imageProcessingScratch/bilinearZoom2x
 DSA/WaveArray.exe
+DSA/HeckerRank/input.cpp
+image_processing/imageProcessingScratch/bilinear2xptr
+image_processing/imageProcessingScratch/extra
+DSA/HeckerRank/input
+DSA/HeckerRank/palindrom
+DSA/HeckerRank/sorted
